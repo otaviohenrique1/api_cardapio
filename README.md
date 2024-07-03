@@ -34,6 +34,7 @@
 - pip install validate-docbr
 - pip install Faker
 - pip install django-cors-headers
+- pip install pillow
 
 ## Exibir pacotes instalados
 

@@ -10,7 +10,7 @@ class Produto(models.Model):
 
     nome = models.CharField(max_length=200, blank=False)
     descricao = models.TextField(blank=False)
-    preco = models.DecimalField(max_length=20, blank=False)
+    preco = models.DecimalField(max_digits=20, decimal_places=2, blank=False)
     tipo = models.CharField(
         max_length=1, choices=TIPO, blank=False, null=False, default=""
     )
@@ -21,9 +21,10 @@ class Produto(models.Model):
         return "{} - R$ {}".format(self.nome, self.preco)
 
 
-class Pedidos(models.Model):
+class Pedido(models.Model):
+    numero_pedido = models.CharField(max_length=200, blank=False)
     cliente = models.CharField(max_length=200, blank=False)
     endereco = models.CharField(max_length=200, blank=False)
     descricao = models.TextField(blank=False)
-    lista_produtos = models.JSONField(blank=False)
-    preco_total = models.DecimalField(max_length=20, blank=False)
+    lista_produtos = models.TextField(blank=False)
+    preco_total = models.DecimalField(max_digits=20, decimal_places=2, blank=False)
