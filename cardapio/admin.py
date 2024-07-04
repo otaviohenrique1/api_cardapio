@@ -6,6 +6,8 @@ class Produtos(admin.ModelAdmin):
     list_display = ("id", "nome", "descricao", "preco", "tipo", "data_cadastro", "foto")
     list_display_links = ("id", "nome")
     search_fields = ("nome",)
+    list_per_page = 20
+    
 
 admin.site.register(Produto, Produtos)
 
