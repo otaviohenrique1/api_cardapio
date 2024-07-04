@@ -63,11 +63,14 @@
 
 ### Comando para criar secret key para o django
 
-- python3 secret_key_generator.py
+- python scripts/secret_key_generator.py
 
-### Comandos para inicializar o projeto
+### Comandos para inicializar o projeto (da primeira vez)
 
 1. python -m virtualenv .venv
 2. source .venv/scripts/activate
 3. pip install -r requirements.txt
-4. python manage.py runserver
+4. python manage.py makemigrations
+5. python manage.py migrate
+6. python manage.py createsuperuser
+7. python manage.py runserver
